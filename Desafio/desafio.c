@@ -5,11 +5,11 @@
 #include "funcao.h"
 
 int main(){
-    int i, x, b, tamanho, decimal;
-    char codigo[10000], ascii, caracter[3];
+    int i, x = 1, b, decimal, quantidade;
+    char codigo[10000], hex[3];
 
     printf("Digite a quantidade de mensagens a serem decodificadas: ");
-    scanf("%d", &x);
+    scanf("%d", &quantidade);
 
     do{
 
@@ -20,29 +20,32 @@ int main(){
         printf("Digite a mensagem: ");
         fgets(codigo, 9999, stdin);
 
-        tamanho = strlen(codigo);
 
-        for( i = 0; i < tamanho - 1; i += 2){
-            caracter[0] = codigo[i];
-            caracter[1] = codigo[i+1];
-            caracter[2] = '\0';
+        for( i = 0; codigo[i] != '\0'; i += 2){
+            hex[0] = codigo[i];
+            hex[1] = codigo[i+1];
+            hex[2] = '\0';
             
-            decimal = (int)strtol(caracter, NULL, 16); // Converte Hexadecimal para Decimal
-            
-
-            ascii = (char)decimal; // Converte Decimal para ASCII
-
-            if(funcao(decimal, b) == 1){
+            decimal = (int)strtol(hex, NULL, 16); // Converte Hexadecimal para Decimal
             
 
-            printf("%c", ascii);
+            if(funcao(x, b) != 0){
+
+                if(hex[0] == '0' && hex[1] == '0'){ // Verifica se são os caracteres nulos.
+                    break;
+
+                }else{
+
+                     printf("%c", decimal);
+
+                }
 
             }
-
+            x++;
         }
         printf("\n");
-        x--;
-    }while(x != 0);
+        quantidade--;
+    }while(quantidade != 0);
 
 
 
