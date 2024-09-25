@@ -1,0 +1,84 @@
+#include <stdio.h>
+
+int main() {
+
+    float N1, N2, PPD, N3 = 0, EU = 0, NF;
+    int EU_check, N3_check;
+
+    printf("Digite a Nota da N1: ");
+    scanf("%f", &N1);
+    printf("Digite a Nota da N2: ");
+    scanf("%f", &N2);
+    printf("Digite a Nota da PPD: ");
+    scanf("%f", &PPD);
+
+    if (N1 >= 0 && N1 <= 4.5 && N2 >= 0 && N2 <= 4.5 && PPD >= 0 && PPD <= 1) {
+        printf("Notas Validas\n");
+    } else {
+        printf("Nota Invalida error [3]\n");
+        return 0;
+    }
+
+    printf("O aluno realizou o Exame Unificado? (0 para Nao, 1 para Sim): ");
+    scanf("%d", &EU_check);
+
+    if (EU_check != 0 && EU_check != 1) {
+        printf("Opção invalida, tente novamente respondendo 1 ou 0\n");
+        return 0;
+    }
+
+    if (EU_check == 1) {
+        printf("Digite a nota do Exame Unificado do aluno (entre 0 e 1): ");
+        scanf("%f", &EU);
+
+        if (EU < 0 || EU > 1) {
+            printf("Nota Invalida error [3]\n");
+            return 0;
+        }
+    }
+
+    printf("O aluno realizou a N3? (0 para Nao, 1 para Sim): ");
+    scanf("%d", &N3_check);
+
+    if (N3_check != 0 && N3_check != 1) {
+        printf("Opção invalida, tente novamente respondendo 1 ou 0\n");
+        return 0;
+    }
+
+    if (N3_check == 1) {
+        printf("Digite a nota da N3 do aluno (entre 0 e 4.5): ");
+        scanf("%f", &N3);
+
+        if (N3 < 0 || N3 > 4.5) {
+            printf("Nota Invalida error [3]\n");
+            return 0;
+        }
+
+        if (N1 < N2) {
+            N1 = N3;
+        } else {
+            N2 = N3;
+        }
+    }
+
+    NF = (N1 + N2 + PPD + EU);
+  
+  if (NF > 10) {
+      NF = 10;
+  } 
+    if (NF >= 0 && NF <= 10) {
+        printf("Nota Valida\n");
+    } 
+     else {
+        printf("Nota Invalida error [3]\n");
+        return 0;
+    }
+
+    if (NF >= 6) {
+        printf("Aluno Aprovado com nota %.2f\n", NF);
+    } else {
+        printf("Aluno Reprovado com nota %.2f\n", NF);
+    }
+
+    return 0;
+}
