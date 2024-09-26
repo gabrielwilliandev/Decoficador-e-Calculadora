@@ -18,10 +18,10 @@ int main(){
         getchar();
 
         printf("Digite a mensagem: ");
-        fgets(codigo, 9999, stdin);
+        fgets(codigo, 9999, stdin); //fgets coleta a mensagem a ser decodificada. Lê 9999 para que a última posição receba '\0'
 
 
-        for( i = 0; codigo[i] != '\0'; i += 2){
+        for( i = 0; codigo[i] != '\0'; i += 2){ //o laço for faz a verificação para separar a mensagem em um vetor com 3 caracteres, pois a cada 2 caracteres há um caractere da mensagem sendo representado
             hex[0] = codigo[i];
             hex[1] = codigo[i+1];
             hex[2] = '\0';
@@ -29,14 +29,14 @@ int main(){
             decimal = (int)strtol(hex, NULL, 16); // Converte Hexadecimal para Decimal
             
 
-            if(funcao(x, b) != 0){
+            if(funcao(x, b) != 0){ //if para verificar se a mensagem é diferente de 0
 
-                if(hex[0] == '0' && hex[1] == '0'){ // Verifica se são os caracteres nulos.
+                if(hex[0] == '0' && hex[1] == '0'){ // Verifica se são os caracteres nulos. No caso de serem nulos, encerram o for
                     break;
 
                 }else{
 
-                     printf("%c", decimal);
+                     printf("%c", decimal); 
 
                 }
 
