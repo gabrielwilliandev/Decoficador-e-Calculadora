@@ -47,9 +47,7 @@ int main(){
         quantidade--;
     }while(quantidade != 0);
 
-
-
-
+    system("pause");
 
     return 0;
 }
