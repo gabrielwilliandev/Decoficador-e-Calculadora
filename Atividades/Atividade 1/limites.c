@@ -6,16 +6,18 @@
 #include <limits.h>
 
 int main() {
-    printf("Tipo\t\tMinimo\t\t\tMaximo\n");
-    printf("Char:\t\t%d\t\t\t%d\n", CHAR_MIN, CHAR_MAX);
-    printf("Int:\t\t%d\t\t\t%d\n", INT_MIN, INT_MAX);
-    printf("Short int:\t%d\t\t\t%d\n", SHRT_MIN, SHRT_MAX);
-    printf("Unsigned int:\t0\t\t\t%u\n", UINT_MAX);
-    printf("Long int:\t%ld\t\t\t%ld\n", LONG_MIN, LONG_MAX);
-    printf("Unsigned long int:\t0\t\t\t%lu\n", ULONG_MAX);
-    printf("Long long int:\t%lld\t\t\t%lld\n", LLONG_MIN, LLONG_MAX);
-    printf("Unsigned long long int:\t0\t\t\t%llu\n", ULLONG_MAX);
-
+	
+    printf("%-25s %-25s %-25s\n", "Tipo", "Minimo", "Maximo");
+    
+    printf("%-25s %-25d %-25d\n", "Char:", CHAR_MIN, CHAR_MAX);
+    printf("%-25s %-25d %-25d\n", "Int:", INT_MIN, INT_MAX);
+    printf("%-25s %-25d %-25d\n", "Shor Int:", SHRT_MIN, SHRT_MAX);
+    printf("%-25s %-25d %-25u\n", "Unsigned Int:", 0, UINT_MAX);
+    printf("%-25s %-25ld %-25ld\n", "Long Int:", LONG_MIN, LONG_MAX);
+    printf("%-25s %-25d %-25lu\n", "Unsigned Long Int:", 0, ULONG_MAX);
+    printf("%-25s %-25lld %-25lld\n", "Long Long Int:", LLONG_MIN, LLONG_MAX);
+    printf("%-25s %-25d %-25llu\n", "Unsigned Long Long Int:", 0, ULLONG_MAX);
+	printf("\n");
     system("pause");
     return 0;
 }
