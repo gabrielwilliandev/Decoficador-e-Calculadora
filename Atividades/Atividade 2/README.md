@@ -1,1 +1,0 @@
-#  Função que invalida alguns caracteres
