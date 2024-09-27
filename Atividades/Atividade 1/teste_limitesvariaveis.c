@@ -19,7 +19,9 @@ int main() {
     return 0;
 }
 
-// Quando o valor da variável ultrapassa o limite, ocorre o overflow. 
-// No código acima, a variável do tipo char pode armazenar valores positivos e negativos.
-// Se ultrapassar o valor máximo, que é 127, o valor "dá uma volta"  e passa para o limite inferior.
-// No caso do char, é -128
+/* 
+Quando o valor da variável ultrapassa o limite, ocorre o overflow. 
+No código acima, a variável do tipo char pode armazenar valores positivos e negativos.
+Se ultrapassar o valor máximo, que é 127, o valor "dá uma volta"  e passa para o limite inferior.
+No caso do char, é -128
+*/
